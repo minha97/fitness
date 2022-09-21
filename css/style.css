@@ -1,0 +1,722 @@
+.innerBox{
+    max-width:1200px;
+    margin:0 auto;
+    position:relative;
+}
+body{
+    overflow-x: hidden;
+    font-family:"Noto Sans KR", sans-serif;
+}
+
+.headTop{
+    background-color:rgba(0,0,0,0.5);
+    padding:15px 0 -1px 0;
+    width: 100%;
+    z-index:1000;
+    position: absolute;
+}
+.headTop>.innerBox{
+    display:flex;
+    justify-content:space-between;
+}
+.logo{
+    padding-top:10px;
+}
+.logo>a{
+    display:block;
+    width:168px;
+    height:89px; 
+    background: url(../images/headerlogo.png) no-repeat;
+    transition:all 0.2s ease-out;
+}
+.logo a:hover{
+    transform:translate(30px, 0px);
+}
+
+#nav{
+    display: flex;
+    padding-top:45px;
+    width:70%;
+}
+#nav>li{
+    width:20%;
+    position:relative;
+    text-align: center;
+    padding:20px 0;
+    transition:0.2s;
+}
+#nav>li:hover{
+    background-color:black;
+}
+#nav>li:hover>a::before{
+    display:block;
+    content: "";
+    width:90px;
+    height:1px;
+    background-color: white;
+    position:relative;
+    left:50%;
+    top:-18px;
+    transform:translateX(-50%);
+}
+#nav>li:hover .sub{
+    height:400px;
+}
+#nav>li>a{
+    font-size:18px;
+    font-weight:600;
+    color:white;
+}
+
+.sub{
+    /* display:none; */
+    /* display:none 처리를 하면 transition이 안먹기 때문에
+    hidden으로 가려주고 높이값주고 hover 했을때 높이값 설정해주면 된다. */
+    position:absolute;
+    top:63px;
+    text-align:center;
+    width:100%;
+    overflow: hidden;
+    height:0px;
+    transition:0.4s;
+}
+.sub>li{
+    border:1px solid #444;
+    padding:10px 4px;
+    background-color:#222;
+}
+.sub>li:hover{
+    background-color:black;
+}
+.sub>li:hover a{
+    color:white;
+}
+.sub>li>a{
+    color:#ddd;
+    font-size:15px;
+    font-weight:bold;
+    line-height:2.2;
+}
+
+.ham {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 42px;
+    z-index: 1000;
+}
+
+.ham>a {
+    display: block;
+}
+
+.ham>a>span {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: white;
+    margin: 8px 0;
+    transition: 0.5s;
+}
+
+.ham>.active>span:first-child {
+    transform: rotate(45deg) translateY(10.5px) translateX(5px);
+}
+
+.ham>.active>span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham>.active>span:last-child {
+    transform: rotate(-45deg) translateY(-10.5px) translateX(5px);
+}
+#mainBanner{
+    width:100%;
+    position:relative;
+    top:0;
+    z-index:1;
+    overflow: hidden;
+}
+.banner{
+    width:500%;
+    position:relative;
+}
+.banner>li{
+    float:left;
+    width:20%;
+    height:100vh;
+    position:relative;
+}
+.banner>li.a{
+    background:url(../images/mainBanner1.jpg) no-repeat center center;
+    background-size:cover;
+}
+.banner>li.b{
+    background:url(../images/mainBanner2.jpg) no-repeat center center;
+    background-size:cover;
+}
+.banner>li.c{
+    background:url(../images/mainBanner3.jpg) no-repeat center center;
+    background-size:cover;
+}
+.banner>li.d{
+    background:url(../images/mainBanner4.jpg) no-repeat center center;
+    background-size:cover;
+}
+.banner>li.e{
+    background:url(../images/mainBanner5.jpg) no-repeat center center;
+    background-size:cover;
+}
+.banner .much{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:50%;
+    font-size:55px;
+    font-weight:900;
+    color:#ff9d00;
+}
+.banner .much{
+    animation-name: vBtn;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes vBtn {
+    0% {
+        opacity: 0;
+        transform:translate3d(0,100px,0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.arrow{
+    position:absolute;
+    width:95%;
+    top:45%;
+    left:45px;
+    display:flex;
+    justify-content: space-between;
+}
+.pager{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+}
+.pager>li{
+    display:inline-block;
+    border:1px solid #888;
+    background:#888;
+    width:20px;
+    height:20px;
+    text-indent:-99999px;
+}
+.pager>.active{
+    width:40px;
+    background-color:black;
+}
+
+
+.price{
+    padding-top:5px;
+    height:300px;
+    background:url(../images/price50.jpg) no-repeat center center;
+    text-align: center;
+}
+.price h2{
+    color:white;
+    text-align: center;
+    font-size:40px;
+    font-weight:900;
+    padding-top:30px;
+}
+.clock{
+    display: inline-block;
+}
+.program .minha{
+    text-align: center;
+    padding:90px 0 70px 0;
+    font-size:19px;
+    color:#555;
+}
+.minha p{
+    padding-top:10px;
+    font-size:17px;
+    color:#555;
+}
+
+.programTop{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.programTop li{
+    width:33.3%;
+    margin-bottom: 10px;
+}
+.programTop p:first-child{
+    width:170px;
+    height: 170px;
+    margin: 0 auto;
+    border:10px solid #ccc;
+    border-radius: 50%;
+}
+.programTop li>p:first-child>a{
+    display: block;
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position:center center;
+    transition:0.5s;
+    height: 100%;
+    border-radius: 50%;
+}
+.programTop li:first-child>p:first-child>a{
+    background-image: url(../images/program1.png);
+   
+}
+.programTop li:nth-child(2)>p:first-child>a{
+    background-image: url(../images/program2\(2\).png);
+}
+.programTop li:nth-child(3)>p:first-child>a{
+    background-image: url(../images/program3.png);
+
+}
+.programTop li:nth-child(4)>p:first-child>a{
+    background-image: url(../images/program4\(4\).png);
+  
+}
+.programTop li:nth-child(5)>p:first-child>a{
+    background-image: url(../images/program5.png);
+  
+}
+.programTop li:last-child>p:first-child>a{
+    background-image: url(../images/program6.png);
+   
+}
+.programTop>li:hover p:nth-child(2)>a{
+    color:#97ad1b;
+}
+.programTop>li>p:first-child:hover>a{
+    transform:rotate(180deg);
+}
+
+
+.programTop p:nth-child(2){
+    padding-top:20px;
+}
+.programTop p:nth-child(2)>a{
+    font-size:24px;
+    color:black;
+    font-weight:600;
+}
+.programTop p:last-child{
+    font-size:15px;
+    font-weight:600;
+    color:#666;
+    padding:15px 0 70px 0;
+}
+.sport{
+    text-align: center;
+}
+.sport span{
+    position:relative;
+    top:50%;
+    font-size:16px;
+    font-weight: 600;
+    color:rgba(255,255,255,0.8);
+    border:2px solid rgba(255,255,255,0.6);
+    padding:20px;
+}
+.sport>div>div>span{
+    transition:0.3s;
+}
+.sport .personal:hover span,
+.sport .dance:hover span,
+.sport .system:hover span,
+.sport .insta:hover span,
+.sport .blog:hover span,
+.sport .notice:hover span{
+    border:5px solid white;
+    color:white;
+    padding:30px;
+    
+}
+.sport .personal:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training1.jpg);
+}
+.sport .dance:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training2.jpg);
+}
+.sport .system:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training3.jpg);
+}
+.sport .insta:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training4.jpg);
+}
+.sport .blog:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training5.jpg);
+}
+.sport .notice:hover{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ),url(../images/training6.jpg);
+}
+
+
+.training .sportTop{
+     display: flex;
+     width:100%;
+ }
+.sportTop .personal{
+    background:url(../images/training1.jpg) no-repeat center center;
+    background-size:cover;
+    width:70%;
+    height:200px;
+    border:1px solid white;
+}
+.sportTop .dance{
+    background:url(../images/training2.jpg) no-repeat center center;
+    background-size:cover;
+    width:30%;
+    border:1px solid white;
+}
+.training .sportMiddle{
+    display: flex;
+    width:100%;
+}
+.sportMiddle .system{
+    background:url(../images/training3.jpg) no-repeat center center;
+    background-size:cover;
+    height:200px;
+    width:40%;
+    border:1px solid white;
+}
+.sportMiddle .insta{
+    background:url(../images/training4.jpg) no-repeat center center;
+    background-size:cover;
+    width:60%;
+    border:1px solid white;
+}
+.training .sportBottom{
+    display: flex;
+    width:100%;
+}
+.sportBottom .blog{
+    background:url(../images/training5.jpg) no-repeat center center;
+    background-size:cover;
+    width:80%;
+    height:200px;
+    border:1px solid white;
+}
+.sportBottom .notice{
+    background:url(../images/training6.jpg) no-repeat center center;
+    background-size:cover;
+    width:20%;
+    border:1px solid white;
+}
+footer .footTop{
+    background:#333;
+    padding:15px 0;
+}
+.footTop>.innerBox{
+    display: flex;
+    justify-content: space-between;
+}
+.footleft{
+    padding-top:8px;
+}
+.footleft>ul>li{
+    display: inline-block;
+    padding-right:13px;
+}
+.footleft>ul>li::after{
+    display:inline-block;
+    content:"";
+    border:1px solid #888;
+    height:8px;
+    margin-left:10px;
+}
+.footleft>ul>li:last-child::after{
+    border:none;
+}
+.footleft>ul>li>a{
+    color:#888;
+    font-size:17px;
+}
+.footleft>ul>li>a:hover{
+    color:white;
+}
+.footright{
+    text-align: center;
+    line-height: 2;
+}
+.footright>p{
+    border:1px solid #666;
+    background:#666;
+    width:80px;
+    height:30px;
+}
+.footright>p:hover{
+    background:white;
+}
+.footright a{
+    font-size:15px;
+    font-weight:bold;
+    color:black;
+}
+.footBottom{
+    padding:50px 0;
+    background:#222;
+}
+.footBottom>.innerBox>p:first-child{
+    padding-bottom:30px;
+}
+.footBottom address{
+    font-size:15px;
+    line-height:1.5;
+}
+
+.footBottom address>p:first-child,
+.footBottom address>p:nth-child(2){
+    color:#888;
+}
+.footBottom address span{
+    color:#555;
+}
+.footBottom address>p:last-child{
+    border:1px solid #666;
+    color:black;
+    background:#666;
+    width:54%;
+    margin-top:5px;
+    padding:0 6px;
+}
+
+@media screen and (max-width:1280px){
+    .banner .much{
+        font-size:40px;
+    }
+}
+@media screen and (max-width:1121px){
+  
+    .logo>a{
+        background: url(../images/headLogo\(2\).png) no-repeat center center;
+    }
+    #nav>li>a{
+        font-size:15px;
+    }
+    .sub{
+        top:59px;
+    }
+    .sub>li>a{
+        font-size:12px;
+    }
+}
+@media screen and (max-width:1024px){
+    .banner .much{
+        font-size:35px;
+    }
+    .arrow{
+        left:28px;
+    }
+    .price h2{
+        font-size:30px;
+    }
+    .slick-slide img{
+        width:100%;
+    }
+    footer .footTop{
+        padding:15px 40px;
+    }
+    .footBottom{
+        padding:50px 40px;
+    }
+}
+@media screen and (max-width:767px){
+    /* --- 나타내기(바꾸기) --- */
+    .headTop{
+        background-color: black;
+    }
+    #nav{
+        display: block;
+        position:absolute;
+        width:90%;
+        left:6%;
+        top:-1000%;
+        border:0px solid #fff;
+        padding-top:0;
+        background-color: #333;
+    }
+    #nav>li{
+        /* 너비의 0값은 넣을수 없고 기본값인 auto로 넣으면 앞에서
+        지정했던 너비값이 사라진다. */
+        width:auto;
+        border-top:1px solid #444;
+        padding:16px 0;
+    }
+    #nav>li>a{
+        font-size: 14px;
+    }
+    
+    #nav>li:hover .sub {
+        height:auto;
+        top: 16px;
+    }
+    .sub{
+        position:relative;
+    }
+    .sub>li{
+        border:1px solid #ccc;
+        padding:10px 4px;
+        background-color:#fff;
+    }
+    .sub>li>a{
+        color:#333;
+    }
+    .sub>li:hover{
+        background-color:#ccc;
+    }
+    .sub>li:hover a{
+        color:#333;
+    }
+    .banner>li{
+        height:100vw;
+    }
+    .ham{
+        display: block;
+    }
+    .arrow{
+        width:100%;
+        left:0;
+    }
+    .banner .much{
+        font-size: 26px;
+    }
+    .flip-clock-wrapper ul{
+        width:97px;
+    }
+    .program .minha{
+        font-size:14px;
+    }
+    .minha p{
+        font-size:13px;
+    }
+    .programTop li{
+        width:45%;
+    }
+    .programTop p:nth-child(2)>a{
+        font-size: 20px;
+    }
+    .programTop p:last-child{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:480px){
+
+     /* --- 나타내기(바꾸기) --- */
+    .banner .much{
+        font-size: 20px;
+        text-align: center;
+    }
+    .pager{
+        bottom:17px;
+    }
+    .pager>li{
+        width:15px;
+        height:15px;
+    }
+    .price{
+        height:auto;
+        background-size: cover;
+    }
+  
+    .price h2{
+        font-size: 10px;
+        padding-top:0;
+    }
+    .flip-clock-wrapper ul{
+        margin: 2px;
+        width: 30px;
+        height: 40px;
+    }
+    .flip-clock-wrapper ul li{
+        line-height: 42px;
+    }
+    .flip-clock-wrapper ul li a div div.inn{
+        font-size: 32px; 
+        padding-top: 0px;
+    }
+    .flip-clock-divider{
+        height:50px;
+    }
+    .flip-clock-divider .flip-clock-label{
+        display: none;
+    }
+    .programTop p:first-child{
+        width:130px;
+        height: 130px;
+    }
+    .program .minha{
+        font-size:12px;
+        padding-top:50px;
+    }
+    .minha p{
+        font-size:11px;
+    }
+    .programTop p:nth-child(2)>a{
+        font-size:17px;
+    }
+    .training .sportTop,
+    .training .sportMiddle,
+    .training .sportBottom{
+        display:block;
+    }
+    .sportTop .personal,
+    .sportTop .dance,
+    .sportMiddle .system,
+    .sportMiddle .insta,
+    .sportBottom .blog,
+    .sportBottom .notice
+    {
+        width:auto;
+    }
+    .sportTop .dance,
+    .sportMiddle .insta,
+    .sportBottom .notice{
+        height:200px;
+    }
+    .sport span{
+        font-size:12px;
+    }
+    .footleft>ul>li>a{
+        font-size:11px;
+    }
+    .footright a{
+        font-size:12px;
+    }
+    .footright>p{
+        width:59px;
+        height:27px;
+    }
+    .footBottom address{
+        font-size:11px;
+    }
+}
+@media screen and (max-width:360px){
+    
+    /* 나타내기(바꾸기) */
+    .program .minha{
+        padding-top:20px;
+    }
+    .program .minha{
+        font-size:11px;
+    }
+    .minha p{
+        font-size:11px;
+    }
+    .programTop p:last-child{
+        font-size:11px;
+    }
+}
